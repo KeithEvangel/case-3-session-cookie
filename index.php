@@ -5,21 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>CASE 3 PEMROGRAMAN WEB</title>
+    <!-- Menghubungkan dengan file CSS Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <!-- Menghubungkan dengan file CSS kustom -->
     <link rel="stylesheet" href="style.css">
+    <!-- Praperendering untuk Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Mengambil font Montserrat dari Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- Mengambil ikon dari Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 
 <body>
+    <!-- Bagian Header -->
     <header>
         <div class="header" style="background-color:DodgerBlue;">
             <h3>Tugas Case 3</h3>
         </div>
     </header>
 
+    <!-- Styling Header -->
     <style>
         .header {
             background-color: #3498db;
@@ -43,6 +50,7 @@
         }
     </style>
 
+    <!-- Formulir login -->
     <div class="loginform p-3">
         <h3 class="text-center mt-2 mb-4">Login</h3>
         <div class="container">
@@ -72,7 +80,8 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
-
+    
+    <!-- Bagian Footer -->
     <footer class="footer">
         <div class="identitskelompok">
             <div class="kelompok">Nama Anggota Kelompok</div>
@@ -100,6 +109,7 @@
         </div>
     </footer>
 
+    <!-- Styling Footer -->
     <style>
         .footer {
             position: relative;
