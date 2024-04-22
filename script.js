@@ -1,15 +1,26 @@
+// Mengambil elemen tombol login dari HTML
 var buttonLogin = document.getElementById('button-login');
+
+// Mengambil elemen field password dari HTML
 const passwordField = document.getElementById('password');
+
+// Mengambil elemen ikon mata dari HTML
 const togglePassword = document.getElementById('togglePassword');
 
+// Menambahkan event listener pada tombol login
 buttonLogin.addEventListener('click', (e) => {
+    // Mencegah perilaku default dari form submit
     e.preventDefault();
+
+    // Mengambil nilai username dan password dari input form
     var username = document.querySelector('#email').value;
     var password = document.querySelector('#password').value;
 
+    // Regular expression untuk validasi email dan password
     var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
+    // Pengecekan validitas input
     if (!username || !password) {
         tampilkanDialog("Email dan password wajib diisi");
     } else if (!emailRegex.test(username)) {
@@ -20,10 +31,12 @@ buttonLogin.addEventListener('click', (e) => {
         tampilkanDialog("Password tidak sesuai kriteria");
         document.getElementById('password').value = '';
     } else {
+        // Jika input valid, panggil fungsi untuk mengirim data ke PHP
         kirimPHP();
     }
 });
 
+// Fungsi untuk menampilkan dialog
 function tampilkanDialog(message) {
     var dialog = document.getElementById('dialog');
     var dialogMessage = document.getElementById('dialog-message');
@@ -31,12 +44,16 @@ function tampilkanDialog(message) {
     dialog.style.display = 'block';
 }
 
+// Mengambil elemen tombol tutup dialog dari HTML
 var tutupDialog = document.getElementById('tutup-dialog');
+
+// Menambahkan event listener pada tombol tutup dialog
 tutupDialog.addEventListener('click', (e) => {
     var dialog = document.getElementById('dialog');
     dialog.style.display = 'none';
 });
 
+// Fungsi untuk mengirim data login ke PHP
 function kirimPHP() {
     var username = document.querySelector('#email').value;
     var password = document.querySelector('#password').value;
@@ -55,15 +72,19 @@ function kirimPHP() {
     ));
 }
 
+// Fungsi untuk mengecek hasil dari validasi login di PHP
 function cekBerhasil(keadaan) {
     if (keadaan === "Success") {
+        // Jika login berhasil, arahkan ke halaman profile
         window.location.href = 'profile.php';
     } else {
+        // Jika login gagal, tampilkan pesan error
         tampilkanDialog("Email atau Password Salah");
         document.querySelector('#password').value = '';
     }
 }
 
+// Event listener untuk mengubah tipe input password
 togglePassword.addEventListener('click', function() {
     // Memeriksa tipe input saat ini
     const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
